@@ -1,18 +1,30 @@
-//Классы – Фигура, Прямоугольник, Элемент управления, Кнопка, Меню, Окно.
-
 #pragma once
-
+#include <stdio.h>
+#include <string.h>
+using namespace std;
 class Element
 {
 public:
+
+	Element()
+	{
+		this->name = name;
+	};
+
+	Element(char *name)
+	{
+		this->name = name;
+	}
+
+
+	virtual ~Element()
+	{}
+
+	virtual char* getName() = 0;
+	virtual int getPlosh() = 0;
+
 	Element *next;
-
-	Element();
-	virtual ~Element();
-
-	virtual void setText(char *text) = 0;
-	virtual void getText() const = 0;
-
-protected:
-	static Element *head;
+protected: 
+	char *name;
+	char *plosh;
 };

@@ -1,19 +1,44 @@
-// лассы Ц ‘игура, ѕр€моугольник, Ёлемент управлени€,  нопка, ћеню, ќкно.
-
 #pragma once
-#include"Element Upravlenia.h"
+#include "Element upravlenia.h"
+#include "iostream"
 using namespace std;
-class Button
-	:public Element
+class Button :
+	public Element
 {
+
 public:
-	Button(char *text = " нопка");
-	~Button();
+	Button()
+	{}
 
-	void setText(char *text);
-	void getText() const;
+	Button(char* name, int plosh) :Element(name)
+	{
+		this->plosh = plosh;
+	};
 
 
-private:
-	char *text;
+	char * getName()
+	{
+		return name;
+	};
+	
+	int getPlosh()
+	{
+		//cout << this->cost;
+		return plosh;
+	};
+
+	void Show()
+	{
+		cout << this->name;
+	};
+
+	void Button::vlozh()
+	{
+		cout << "Button level: ";
+		cout << this->num << endl;
+	}
+
+protected:
+	int num = 3;
+	int plosh;
 };

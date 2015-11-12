@@ -10,7 +10,7 @@ public:
 	Figura();
 
 	virtual void setName(char *name) = 0;
-	virtual void getName() const = 0;
+	virtual char* getName() const = 0;
 
 	virtual void setWidth(int) = 0;
 	virtual void getWidth() const = 0;

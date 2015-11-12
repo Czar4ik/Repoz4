@@ -2,7 +2,6 @@
 
 #pragma once
 #include "Figura.h"
-
 using namespace std;
 
 class Rectangle
@@ -13,15 +12,16 @@ public:
 	~Rectangle();
 
 	void setName(char *name);
-	void getName() const;
+	char* getName() const;
 
 	void setWidth(int);
-	void getWidth() const;
+	int getWidth();
 
 	static void show();
 	void add();
-
+	Rectangle *next;
 private:
 	int width;
 	char *name;
+
 };

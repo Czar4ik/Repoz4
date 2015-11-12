@@ -1,20 +1,44 @@
-//Классы – Фигура, Прямоугольник, Элемент управления, Кнопка, Меню, Окно.
-
 #pragma once
-#include"rectangle.h"
-#include "Button.h"
+#include "Element upravlenia.h"
+#include "iostream"
+using namespace std;
 
-class Window
+class Window :
+	public Element
 {
-	Rectangle *rectangle;
+
 public:
-	int b = 11;
+	Window()
+	{}
 
-	Window();
-	~Window();
+	Window(char* name, int plosh) :Element(name)
+	{
+		this->plosh = plosh;
+	};
 
-	void setSize(int);
-	void getSize();
+	char* getName()
+	{
 
+		return name;
+	};
+	
+	int getPlosh()
+	{
+		//cout << this->cost;
+		return plosh;
+	};
 
+	void Show()
+	{
+		cout << this->name;
+	};
+
+	void Window::vlozh()
+	{
+		cout << "Window level: ";
+		cout << this->num << endl;
+	}
+protected:
+	int num = 3;
+	int plosh;
 };
